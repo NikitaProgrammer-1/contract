@@ -1,0 +1,27 @@
+geth account new --datadir <C>
+geth --datadir "<C>" init "<G>"
+geth --http --http.addr "127.0.0.1" --http.api "eth,miner,net,web3,admin,personal" --networkid 15 --datadir "<C>allow"--allow-insecure-unlock --http.corsdomain "*" console
+geth attach "http://127.0.0.1:8545"
+personal.unlockAccount(eth.accounts[0], "123", 0)
+miner.start(1)
+{
+    "config" : {
+    "chainId" : 10,
+    "homesteadBlock" : 0,
+    "eip150Block" : 0,
+    "eip155Block" : 0,
+    "eip158Block" : 0,
+    "eip160Block" : 0,
+    "byzantiumBlock" : 0,
+    "constantinopleBlock" : 0,
+    "petersburgBlock" : 0,
+    "istanbulBlock" : 0, 
+    "ethash" : {}
+    },
+    "nonce": "0x000000000000000033",
+    "difficulty" : "10",
+    "gasLimit" : "8000000000000",
+    "alloc": { 
+        "" : {"balance" : "1000000000000000000000"}
+    }
+}
